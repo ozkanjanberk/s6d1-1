@@ -1,11 +1,13 @@
 import { useState } from 'react';
 import './App.css';
-import Sayac from './components/Sayac';
+import Dondurucu from './components/Dondurucu';
 
 function App() {
+  const [count, setCount] = useState(0);
+
   return (
     <>
-      <Sayac />
+      <Dondurucu />
     </>
   );
 }

@@ -17,36 +17,36 @@ ADIM 4, 5, 6:
   Click handler içinde state'in setter'ını kulanarak aşağıda tanımlanmış değişkenleri kullanarak state'de tuttuğunuz metni güncelleyin.
 */
 
-import React from 'react'; /* ADIM 0 */
+import React, { useState } from 'react'; /* ADIM 0 */
 
 const ilkRuhHali = 'Nasıl hissettiğimi bilmiyorum :-|';
 const mutluRuhHali = 'Oldukça mutlu :)';
 const uzgunRuhHali = 'Oldukça üzgün :(';
 
 export default function RuhHalleri() {
-  /* ADIM 1 */
+  const [ruhHali, setRuhhali] = useState(ilkRuhHali);
 
   const mutluEt = () => {
-    /* ADIM 4 */
+    setRuhhali(mutluRuhHali);
   };
   const uZ = () => {
-    /* ADIM 5 */
+    setRuhhali(uzgunRuhHali);
   };
   const reset = () => {
-    /* ADIM 6 */
+    setRuhhali(ilkRuhHali);
   };
 
   const stil = {
     fontSize: '1.5em',
     marginBottom: '0.3em',
-    color: 'royalblue' /* ADIM 2 */,
+    color: ruhHali == mutluRuhHali ? 'royalblue' : 'crimson',
   };
 
   return (
     <div className="widget-moods container">
       <h2>RuhHalleri</h2>
       <div id="ruhHali" style={stil}>
-        Nasıl hissediyorum bilmiyorum :-|
+        {ruhHali}
       </div>{' '}
       <div>
         <button id="mutluEt" onClick={mutluEt}>

@@ -31,7 +31,7 @@ ADIM 6:
   - İpucu: state'in setter'ını kullanmaya dikkat.
 */
 
-import React, { useState } from "react"; /* ADIM 0 */
+import React, { useState } from 'react'; /* ADIM 0 */
 
 export default function Sayac() {
   const [counter, setCounter] = useState(0);
@@ -47,16 +47,16 @@ export default function Sayac() {
   };
 
   const stil = {
-    fontSize: "1.5em",
-    marginBottom: "0.3em",
-    color: counter % 2 == 0 ? "royalblue" : "crimson",
+    fontSize: '1.5em',
+    marginBottom: '0.3em',
+    color: counter % 2 == 0 ? 'royalblue' : 'crimson',
   };
 
   return (
     <div className="widget-counter container">
       <h2>Sayaç</h2>
       <div id="sayici" style={stil}>
-        Sayı: {counter} {counter % 2 == 0 ? "çift" : "tek"} sayıdır
+        Sayı: {counter} {counter % 2 == 0 ? 'çift' : 'tek'} sayıdır
       </div>
       <div>
         <button id="artirici" onClick={artirici}>
