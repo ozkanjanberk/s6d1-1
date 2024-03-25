@@ -53,7 +53,6 @@ export default function Input() {
         <input
           data-testid="input"
           type="text"
-          data-testid="input"
           onChange={inputuDeğiştir}
           value={input}
         />{" "}
