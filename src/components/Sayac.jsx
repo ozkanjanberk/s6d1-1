@@ -37,13 +37,13 @@ export default function Sayac() {
   const [counter, setCounter] = useState(0);
 
   const artirici = () => {
-    /* ADIM 4 */
+    setCounter(counter + 1);
   };
   const azaltici = () => {
-    /* ADIM 5 */
+    setCounter(counter - 1);
   };
   const reset = () => {
-    /* ADIM 6 */
+    setCounter(0);
   };
 
   const stil = {
@@ -56,7 +56,7 @@ export default function Sayac() {
     <div className="widget-counter container">
       <h2>Sayaç</h2>
       <div id="sayici" style={stil}>
-        Sayı: {counter} çift sayıdır
+        Sayı: {counter} {counter % 2 == 0 ? "çift" : "tek"} sayıdır
       </div>
       <div>
         <button id="artirici" onClick={artirici}>
