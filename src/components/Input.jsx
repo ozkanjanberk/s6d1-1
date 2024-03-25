@@ -23,29 +23,30 @@ ADIM 6:
   <input /> öğesine şu şekilde fazladan bir prop eklememiz gerekiyor: value={stateDeğeri}
 */
 
-import React from 'react'; /* ADIM 0 */
+import React, { useState } from "react"; /* ADIM 0 */
 
 export default function Input() {
-  /* ADIM 1 */
+  const [input, setInput] = useState("");
 
   const inputuDeğiştir = (evt) => {
-    /* ADIM 4 */
+    const value = evt.target.value;
+    setInput(value);
   };
   const reset = () => {
-    /* ADIM 5 */
+    setInput("");
   };
 
   const stil = {
-    fontSize: '1.5em',
-    marginBottom: '0.3em',
-    color: 'blue' /* ADIM 2 */,
+    fontSize: "1.5em",
+    marginBottom: "0.3em",
+    color: input.length > 10 ? "crimson" : "royalblue",
   };
 
   return (
     <div className="widget-input container">
       <h2>Input</h2>
       <div data-testid="output" style={stil}>
-        {/* ADIM 3 */}
+        {input.toUpperCase()}
       </div>
 
       <div>
@@ -54,7 +55,8 @@ export default function Input() {
           type="text"
           data-testid="input"
           onChange={inputuDeğiştir}
-        />{' '}
+          value={input}
+        />{" "}
         {/* ADIM 6'yı input element'ine attribute olarak yazın*/}
         <button id="resetInput" onClick={reset}>
           Reset
